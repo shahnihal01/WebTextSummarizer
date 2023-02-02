@@ -44,7 +44,7 @@ function App() {
           </p>
           <div className={`justify-center w-full h-full ${sum?'hidden':'flex'}`}>
             <form className='w-full h-full'>
-              <textarea value={txt} onChange={(e)=>setTxt(e.target.value)} className='w-full h-full rounded-3xl' placeholder='Paste the content needed to be summarized here and then press summarize...' style={{resize:"none", outline:"none", padding:"10px"}}></textarea>
+              <textarea value={txt} onChange={(e)=>setTxt(e.target.value)} className='w-full h-full rounded-3xl overflow-auto' placeholder='Paste the content needed to be summarized here and then press summarize...' style={{resize:"none", outline:"none", padding:"10px"}}></textarea>
             </form>
           </div>
         </div>
