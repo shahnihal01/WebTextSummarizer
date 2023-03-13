@@ -1,6 +1,6 @@
 import './App.css';
 import {useState} from 'react';
-import { useSpeechSynthesis } from 'react-speech-kit';
+// import { useSpeechSynthesis } from 'react-speech-kit';
 
 function App() {
   const [load, setLoad] = useState(false);
@@ -14,7 +14,16 @@ function App() {
   }
 
   const [txt,setTxt] = useState("");
-  const {speak} = useSpeechSynthesis();
+  // const {speak} = useSpeechSynthesis();
+
+  // let url = window.location.href;
+  // console.log("URL of active tab:", url);
+
+  // chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+  //   let activeTab = tabs[0];
+  //   let activeTabUrl = activeTab.url;
+  //   console.log(activeTabUrl);
+  // });
 
   return (
     //bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400
@@ -50,14 +59,14 @@ function App() {
         </div>
       </div>
       <div className='flex justify-center'>
-        <button onClick={()=>speak({text:txt})} className='flex justify-center bg-gradient-to-r from-sky-400 to-blue-500 mt-2 mb-1 w-40 h-12 rounded-2xl text-center items-center border-blue-500 border-4 hover:border-sky-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 drop-shadow-lg'>
+        {/* <button onClick={()=>speak({text:txt})} className='flex justify-center bg-gradient-to-r from-sky-400 to-blue-500 mt-2 mb-1 w-40 h-12 rounded-2xl text-center items-center border-blue-500 border-4 hover:border-sky-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 drop-shadow-lg'>
           <p className='font-Sono text-xl text-white font-semibold flex items-center text-center'>Listen</p>
           <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.15838 13.9306C3.44537 12.7423 3.44537 11.2577 4.15838 10.0694C4.37596 9.70674 4.73641 9.45272 5.1511 9.36978L6.84413 9.03117C6.94499 9.011 7.03591 8.95691 7.10176 8.87788L9.17085 6.39498C10.3534 4.97592 10.9447 4.26638 11.4723 4.45742C12 4.64846 12 5.57207 12 7.41928L12 16.5807C12 18.4279 12 19.3515 11.4723 19.5426C10.9447 19.7336 10.3534 19.0241 9.17085 17.605L7.10176 15.1221C7.03591 15.0431 6.94499 14.989 6.84413 14.9688L5.1511 14.6302C4.73641 14.5473 4.37596 14.2933 4.15838 13.9306Z" fill="#FFFFFF"/>
             <path d="M14.5355 8.46447C15.4684 9.39732 15.9948 10.6611 16 11.9803C16.0052 13.2996 15.4888 14.5674 14.5633 15.5076" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
             <path d="M18.6569 6.34314C20.1494 7.83572 20.9916 9.85769 20.9999 11.9685C21.0083 14.0793 20.182 16.1078 18.7012 17.6121" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
           </svg>
-        </button>
+        </button> */}
       </div>
     </div>
   );

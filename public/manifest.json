@@ -9,11 +9,16 @@
   },
   "version":"1.0.0",
   "manifest_version": 3,
+  "background":{
+    "scripts":["background.js"]
+  },
   "action":{
     "default_popup":"index.html",
-    "default_title":"Open the pop-up"
+    "default_title":"Open the summarizer"
   },
   "permissions":[
-    "scripting"
+    "scripting",
+    "tabs",
+    "activeTab"
   ]
 }
