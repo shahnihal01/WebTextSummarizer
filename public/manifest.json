@@ -9,14 +9,13 @@
   },
   "version":"1.0.0",
   "manifest_version": 3,
-  "background":{
-    "scripts":["background.js"]
-  },
   "action":{
     "default_popup":"index.html",
     "default_title":"Open the summarizer"
   },
   "permissions":[
+    "http://localhost:5000/*",
+    "webRequest",
     "scripting",
     "tabs",
     "activeTab"
