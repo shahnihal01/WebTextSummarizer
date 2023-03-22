@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily:{
         Sono:['Poppins'],
+        Lobster:['Lobster']
       },
     },
   },

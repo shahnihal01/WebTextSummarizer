@@ -8,6 +8,7 @@ CORS(app)
 input = {
 	'url': ''
 }
+
 @app.route('/', methods = ["GET", "POST"])
 def root():
 	if request.method == "POST":

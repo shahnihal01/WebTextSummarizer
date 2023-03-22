@@ -3,9 +3,9 @@
   "name": "Web Article Summarizer",
   "description":"A web article summarizing extension",
   "icons": {
-    "16":"logo192.png",
-    "48":"logo192.png",
-    "128":"logo192.png"
+    "16":"logo.png",
+    "48":"logo.png",
+    "128":"logo.png"
   },
   "version":"1.0.0",
   "manifest_version": 3,
