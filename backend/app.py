@@ -14,15 +14,11 @@ def root():
 	if request.method == "POST":
 		feed = request.get_json()
 		input['url'] = feed['url']
-		return render_template('index.html')
+		return ('Successful POST', 201)
 	else:
-		return render_template('index.html')
-
-
-@app.route('/api', methods = ['GET'])
-def details():
-	return jsonify({'project': 'Web Articles Summarization Extension', 
+		return jsonify({'project': 'Web Articles Summarization Extension', 
 	'version': '0.1'})
+
 
 @app.route('/data', methods = ['GET'])
 def form_data():
