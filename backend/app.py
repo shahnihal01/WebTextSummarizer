@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, redirect, url_for, request
+from flask import Flask, jsonify, redirect, url_for, request
 from flask_cors import CORS
 from data import Data
 from scraper import scrape
