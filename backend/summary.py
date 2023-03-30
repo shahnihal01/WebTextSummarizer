@@ -11,30 +11,59 @@ def summarize(text:str):
     text = text.replace('!', '!<eos>')
     text = text.replace('?', '?<eos>')
     sentences = text.split('<eos>')
-    max_chunk = 500
-    current_chunk = 0
+    print(len(sentences))
+    max_chunk = len(sentences)//3
+    # current_chunk = 0
     chunks = []
-    for sentence in sentences:
-        if len(chunks) == current_chunk + 1:
-            if len(chunks[current_chunk]) + len(sentence.split(' ')) <= max_chunk:
-                chunks[current_chunk].extend(sentence.split(' '))
-            else:
-                current_chunk += 1
-                chunks.append(sentence.split(' '))
-        else:
-            chunks.append(sentence.split(' '))
-    
-    for chunk_id in range(len(chunks)):
-        chunks[chunk_id] = ' '.join(chunks[chunk_id])
-    # encode the input text using the tokenizer
-    inputs = tokenizer(chunks, max_length=1024, truncation=True, padding='longest', return_tensors='pt')
 
-    # generate the summary using the Pegasus model
-    summary_ids = model.generate(inputs['input_ids'], max_length=100, num_beams=5, early_stopping=True)
-    summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
+    # for sentence in sentences:
+    #     if len(chunks) == current_chunk + 1:
+    #         if len(chunks[current_chunk]) + len(sentence.split(' ')) <= max_chunk:
+    #             chunks[current_chunk].extend(sentence.split(' '))
+    #         else:
+    #             current_chunk += 1
+    #             chunks.append(sentence.split(' '))
+    #     else:
+    #         chunks.append(sentence.split(' '))
+    
+    # for chunk_id in range(len(chunks)):
+    #     chunks[chunk_id] = ' '.join(chunks[chunk_id])
+    # # encode the input text using the tokenizer
+    # inputs = tokenizer(chunks, max_length=1024, truncation=True, padding='longest', return_tensors='pt')
+
+    # # generate the summary using the Pegasus model
+    # summary_ids = model.generate(inputs['input_ids'], max_length=140, num_beams=5, early_stopping=True)
+    # summary=[]
+    # for id in summary_ids:
+    #     summary.append(tokenizer.decode(id, skip_special_tokens=True))
+
+    # print(summary)
+
+    for i in range(0, len(sentences), max_chunk):
+        chunk = ' '.join(sentences[i:i+max_chunk])
+        print(chunk)
+        print('--------------------')
+        chunks.append(chunk)
+
+    summaries = []
+    for chunk in chunks:
+        # encode the input text using the tokenizer
+        inputs = tokenizer(chunk, max_length=1024, truncation=True, padding='longest', return_tensors='pt')
+
+        # generate the summary using the Pegasus model
+        summary_ids = model.generate(inputs['input_ids'], min_length=10, max_length=80, num_beams=5, early_stopping=True)
+        summary=[]
+        for id in summary_ids:
+            summary.append(tokenizer.decode(id, skip_special_tokens=True))
+
+        print(summary)
+        if summary:
+            summaries.append(' '.join(summary))
+
+    final_summary = ' '.join(summaries)
 
     # print the summary
-    return summary
+    return final_summary
 
 
     # # Load the Bart tokenizer and model

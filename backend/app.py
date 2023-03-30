@@ -20,6 +20,7 @@ def parse_url():
 	if request.method == "POST":
 		feed = request.get_json()
 		input['url'] = feed['url']
+		input['plain_text']=''
 		return ('Successful POST', 201)
 	else:
 		return jsonify({'project': 'Web Articles Summarization Extension', 
