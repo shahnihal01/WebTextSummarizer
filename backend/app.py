@@ -1,8 +1,7 @@
 from flask import Flask, jsonify, redirect, url_for, request
 from flask_cors import CORS
 from data import DataWithUrl, DataWithPlainText
-from scraper import scrape
-from summary import summarize
+
 app = Flask(__name__)
 CORS(app)
 input = {
