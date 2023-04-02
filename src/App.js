@@ -81,7 +81,7 @@ function App() {
       <div className='flex flex-col justify-center align-middle h-[80%] w-full text-center drop-shadow-lg'>
         {loaded ? (
           <div className='flex flex-col bg-white rounded-3xl mx-auto h-auto w-[85%] max-h-[100%] drop-shadow-lg overflow-auto'>
-            <p className='p-2 text-lg text-justify overflow-scroll'>{summary}</p>
+            <p className='p-2 text-base text-justify overflow-scroll'>{summary}</p>
             <div className='flex justify-center'>
               <button className='flex justify-center bg-gradient-to-r from-sky-400 to-blue-500 mt-2 mb-1 w-40 h-12 rounded-2xl text-center items-center border-blue-500 border-4 hover:border-sky-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 drop-shadow-lg' onClick={speakText} disabled={speaking}>
                 <p className='text-xl text-white font-semibold flex items-center text-center'>{speaking ? "Speaking..." : "Listen"}</p>
@@ -100,7 +100,7 @@ function App() {
                   <div className="white-orbit w2 leo"></div>
                   <div className="white-orbit w3 leo"></div>
                 </div>
-                <p className='text-white'>Loading... This may take upto 2-3 minutes</p>
+                <p className='text-white text-lg'>Loading... This may take upto 2-3 minutes</p>
               </div>
             ) : (
               <div className='flex flex-col justify-center mx-auto h-auto w-full items-center drop-shadow-lg'>
