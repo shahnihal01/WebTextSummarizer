@@ -38,7 +38,7 @@ def parse_plain_text():
 
 @app.route('/data', methods = ['GET'])
 def form_data():
-	if input['plain_text'] == "":
+	if input['plain_text'] == '':
 		data_object = DataWithUrl(input['url'])
 		data = data_object.scrape_clean_and_summarize()
 		return jsonify(data)
