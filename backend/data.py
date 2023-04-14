@@ -10,7 +10,10 @@ class DataWithUrl:
     
     def scrape_clean_and_summarize(self):
         self.__plain_text = scrape(self.url)
-        self.__summary_text = summarize(self.__plain_text)
+        if self.__plain_text == "The URL for the article cannot be scraped. Please enter the text":
+            self.__summary_text = self.__plain_text
+        else:
+            self.__summary_text = summarize(self.__plain_text)
         return {
             "url": self.url,
             "plain_text": self.__plain_text,
