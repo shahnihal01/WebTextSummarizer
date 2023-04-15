@@ -18,14 +18,14 @@ def summarize(text:str):
 
     # Remove any leading/trailing whitespace from each sentence
     sentences = [s.strip() for s in sentences]
-    print(len(sentences))
+    # print(len(sentences))
     max_chunk = len(sentences)//2
     chunks = []
 
     first_half = sentences[:max_chunk]
     second_half = sentences[max_chunk:]
-    print(' '.join(first_half))
-    print(' '.join(second_half))
+    # print(' '.join(first_half))
+    # print(' '.join(second_half))
     chunks.append(' '.join(first_half))
     chunks.append(' '.join(second_half))
     # for i in range(0, len(sentences), max_chunk):
@@ -45,7 +45,7 @@ def summarize(text:str):
         for id in summary_ids:
             summary.append(tokenizer.decode(id, skip_special_tokens=True))
 
-        print(summary)
+        # print(summary)
         if summary:
             summaries.append(' '.join(summary))
 
