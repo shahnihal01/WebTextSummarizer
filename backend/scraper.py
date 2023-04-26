@@ -14,8 +14,11 @@ def scrape(link):
     html_content = urllib.request.urlopen(req).read()
     soup = BeautifulSoup(html_content,'html.parser')
     article_text_div = soup.find('article')
-    elements = article_text_div.find_all(['h1','h2','h3','p'])
     article = ""
-    for element in elements:
-        article += (clean_unicode(str(element.text)))
-    return article
+    if article_text_div:
+        elements = article_text_div.find_all(['h1','h2','h3','p'])
+        for element in elements:
+            article += (clean_unicode(str(element.text)))
+        return article
+    else: 
+        return "The URL for the article cannot be scraped. Please enter the text"
