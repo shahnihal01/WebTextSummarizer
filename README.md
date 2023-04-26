@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Summarize Any Web Article with SummUP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+If you're tired of reading long articles and want a quick summary, SummUP is the perfect solution for you! SummUP is a browser extension that uses BART (Bidirectional and Auto-Regressive Transformer) model for summarization. It is made using ReactJS for front-end and Flask for back-end.
 
-## Available Scripts
+## Building the Extension
 
-In the project directory, you can run:
+To build the SummUP extension, follow these steps:
 
-### `npm start`
+1. Clone the repository from GitHub: `git clone https://github.com/shahnihal01/WebTextSummarizer.git`
+2. Navigate to the `web-text-sum` directory: `cd web-text-sum`
+3. Install the required dependencies: `npm install` for front-end and `pip install -r requirements.txt` for back-end.
+4. Build the front-end: `npm run build`
+5. Build the back-end: `python app.py`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This will create a `build` folder containing the extension files.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Running the Extension Locally
 
-### `npm test`
+To load and unpack the `build` folder in the browser and run the SummUP extension locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Open the browser and go to the extension page.
+2. Enable developer mode.
+3. Click on "Load unpacked" and select the `build` folder.
+4. Once the folder is loaded, the SummUP icon will appear in the browser toolbar.
+5. Click on the SummUP icon to activate the extension on any web page.
 
-### `npm run build`
+## Properties of BART Model
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The summarization model is built using BART. BART is a neural network-based language model that is trained to perform sequence-to-sequence tasks such as summarization, translation, and text generation. Some of its key properties include:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- BART is a pre-trained model, which means it has been trained on a large corpus of text data and can be fine-tuned for a specific task.
+- It uses a combination of auto-encoder and auto-regressive techniques to generate high-quality summaries.
+- BART is bidirectional, which means it can take into account both the previous and the next words in a sequence when generating a summary.
+- BART uses attention mechanisms to focus on the most relevant parts of the input text when generating a summary. This helps it generate more accurate and relevant summaries.
