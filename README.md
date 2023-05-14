@@ -2,6 +2,8 @@
 
 If you're tired of reading long articles and want a quick summary, SummUP is the perfect solution for you! SummUP is a browser extension that uses BART (Bidirectional and Auto-Regressive Transformer) model for summarization. It is made using ReactJS for front-end and Flask for back-end.
 
+https://github.com/shahnihal01/WebTextSummarizer/assets/82139908/81ac7f4a-3717-4587-b309-c12b96982336
+
 ## Building the Extension
 
 To build the SummUP extension, follow these steps:
